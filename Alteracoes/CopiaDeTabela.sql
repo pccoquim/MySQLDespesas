@@ -1,0 +1,1 @@
+CREATE TABLE nova_tabela SELECT * FROM tbl_0102_terceiros;

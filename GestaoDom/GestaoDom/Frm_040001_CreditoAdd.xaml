@@ -1,0 +1,206 @@
+﻿<!--
+Frm_040001_CreditoAdd.xaml
+Autor: Paulo da Cruz Coquim
+Data: 07.06.2024
+Versão: 1.0.0
+-->
+<Window x:Class="GestaoDom.Frm_040001_CreditoAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestaoDom"
+        mc:Ignorable="d"
+        Icon="/Imagens/Add.png"
+        WindowStartupLocation="CenterScreen"
+        Title="Adicionar de movimentos a crédito"
+        Background="Aqua"
+        Height="330" 
+        Width="380">
+    <Window.Resources>
+        <Style x:Key="CheckBoxStyle" TargetType="{x:Type CheckBox}">
+            <Style.Triggers>
+                <Trigger Property="IsFocused"
+                         Value="True">
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect ShadowDepth="0"
+                                              BlurRadius="10"
+                                              Opacity="0.5"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Label x:Name="Lbl_transf"
+               Content="Transferência"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10, 10, 0, 0"
+               Width="100">
+        </Label>
+        <CheckBox x:Name="Ckb_Transf"
+                  IsChecked="{Binding Transf, Mode=TwoWay}"
+                  Margin="110, 15, 0, 0" Checked="CheckBox_Checked"
+                  Unchecked="CheckBox_Unchecked"
+                  FocusVisualStyle="{x:Null}"
+                  Style="{StaticResource CheckBoxStyle}"
+                  Background="#FFEAEAEA"
+                  KeyDown="Ckb_Transf_KeyDown">
+        </CheckBox>
+
+        <Label x:Name="Lbl_Terceiro"
+               Content="Terceiro"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,40,0,0"
+               Width="100">
+        </Label>
+        <ComboBox x:Name="Cbx_Terceiro"
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Left"
+                  Margin="110,45,0,0"
+                  Height="20"
+                  Width="240"
+                  KeyDown="Cbx_Terceiro_KeyDown">
+        </ComboBox>
+
+        <Label x:Name="Lbl_TipoReceita"
+               Content="Tipo de receita"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,70,0,0"
+               Width="100">
+        </Label>
+        <ComboBox x:Name="Cbx_TipoReceita"
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Left"
+                  Margin="110,75,0,0"
+                  Height="20"
+                  Width="240"
+                  KeyDown="Cbx_TipoReceita_KeyDown">
+        </ComboBox>
+
+        <Label x:Name="Lbl_NDoc"
+               Content="Nº documento"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,100,0,0"
+               Width="100">
+        </Label>
+        <TextBox x:Name="Txt_NDoc"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="110,105,0,0"
+                 Background="#FFEAEAEA"
+                 TextWrapping="Wrap"
+                 Text=""
+                 Height="20"
+                 Width="130"
+                 LostFocus="Txt_NDoc_LostFocus"
+                 KeyDown="Txt_NDoc_KeyDown">
+        </TextBox>
+
+        <Label x:Name="Lbl_Data"
+               Content="Data"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,130,0,0"
+               Width="100">
+        </Label>
+        <TextBox x:Name="Txt_Data"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="110,135,0,0"
+                 Background="#FFEAEAEA"
+                 TextWrapping="Wrap"
+                 Text=""
+                 Height="20"
+                 Width="80"
+                 LostFocus="Txt_Data_LostFocus"
+                 KeyDown="Txt_Data_KeyDown"
+                 TextChanged="Txt_Data_TextChanged">
+        </TextBox>
+
+        <Label x:Name="Lbl_ContaDebito"
+               Content="Conta a débito"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               IsEnabled="False"
+               Margin="10,160,0,0"
+               Width="100">
+        </Label>
+        <ComboBox x:Name="Cbx_ContaDebito"
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Left"
+                  IsEnabled="False"
+                  Margin="110,165,0,0"
+                  Height="20"
+                  Width="240"
+                  KeyDown="Cbx_ContaDebito_KeyDown">
+        </ComboBox>
+
+        <Label x:Name="Lbl_ContaCredito"
+               Content="Conta a crédito"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,190,0,0"
+               Width="100">
+        </Label>
+        <ComboBox x:Name="Cbx_ContaCredito"
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Left"
+                  Margin="110,195,0,0"
+                  Height="20"
+                  Width="240"
+                  KeyDown="Cbx_ContaCredito_KeyDown">
+        </ComboBox>
+
+        <Label x:Name="Lbl_Valor"
+               Content="Valor"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,220,0,0"
+               Width="100">
+        </Label>
+        <TextBox x:Name="Txt_Valor"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="110,225,0,0"
+                 Background="#FFEAEAEA"
+                 HorizontalContentAlignment="Right"
+                 TextWrapping="Wrap"
+                 Text=""
+                 Height="20"
+                 Width="100"
+                 PreviewTextInput="Txt_Valor_PreviewTextInput"
+                 GotFocus="Txt_Valor_GotFocus"
+                 LostFocus="Txt_Valor_LostFocus"
+                 KeyDown="Txt_Valor_KeyDown">
+        </TextBox>
+
+        <Button x:Name="Btn_Save"
+                Content="Adicionar"
+                FontWeight="Bold"
+                Background="GreenYellow"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="110,255,0,0"
+                Width="60"
+                Height="20"
+                Click="Btn_Save_Click">
+        </Button>
+        <Button x:Name="Btn_Close"
+                Content="Fechar"
+                FontWeight="Bold"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="180,255,0,0"
+                Width="60"
+                Height="20"
+                Click="Btn_Close_Click">
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,44 @@
+﻿<!--
+frm_000103_DBRestore.xaml
+Autor: Paulo da Cruz Coquim
+Data: 07.06.2024
+Versão: 1.0.0
+-->
+<Window x:Class="GestaoDom.Frm_000103_DBRestore"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestaoDom"
+        mc:Ignorable="d"
+        Icon="/Imagens/Restore.png"
+        WindowStartupLocation="CenterScreen"
+        Title="Restauração de base de dados a partir de backup"
+        Background="Aqua"
+        Height="80"
+        Width="350">
+    <Grid>
+        <Button x:Name="Btn_Restore"
+                Content="Restauar"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="100,15,0,0"
+                FontWeight="Bold"
+                Background="GreenYellow"
+                Width="60"
+                Height="20"
+                Click="Btn_Restore_Click">
+        </Button>
+
+        <Button x:Name="Btn_Close"
+                Content="Fechar"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="190,15,0,0"
+                FontWeight="Bold"
+                Width="60"
+                Height="20"
+                Click="Btn_Close_Click">
+        </Button>
+    </Grid>
+</Window>

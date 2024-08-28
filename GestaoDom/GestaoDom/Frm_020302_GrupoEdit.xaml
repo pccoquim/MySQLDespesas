@@ -1,0 +1,34 @@
+﻿<!--
+frm_020302_GrupoEdit.xaml
+Autor: Paulo da Cruz Coquim
+Data: 07.06.2024
+Versão: 1.0.0
+-->
+<Window x:Class="GestaoDom.Frm_020302_GrupoEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestaoDom"
+        mc:Ignorable="d"
+        Icon="/Imagens/Edit.png"
+        WindowStartupLocation="CenterScreen"
+        Title="Alteração de Grupos" Height="250" Width="430">
+    <Grid>
+        <Label Name="lbl_Familia" Content="Familia" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 10, 0, 0" Width="100" />
+        <TextBox Name="txt_CodFam" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,15,0,0" IsEnabled="False" HorizontalContentAlignment="Right" TextWrapping="Wrap" Text="" Height="20" Width="30" />
+        <TextBox Name="txt_DescrFam" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,15,0,0" IsEnabled="False" HorizontalContentAlignment="Left" TextWrapping="Wrap" Text="" Height="20" Width="220" />
+        <Label Name="lbl_SubFamilia" Content="Subfamilia" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 40, 0, 0" Width="100" />
+        <TextBox Name="txt_CodSubFam" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,45,0,0" IsEnabled="False" HorizontalContentAlignment="Right" TextWrapping="Wrap" Text="" Height="20" Width="30" />
+        <TextBox Name="txt_DescrSubFam" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,45,0,0" IsEnabled="False" HorizontalContentAlignment="Left" TextWrapping="Wrap" Text="" Height="20" Width="220" />
+        <Label Name="lbl_Cod" Content="Código Grupo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 70, 0, 0" Width="100" />
+        <TextBox Name="txt_Cod" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,75,0,0" IsEnabled="False" HorizontalContentAlignment="Right" TextWrapping="Wrap" Text="" Height="20" Width="30" />
+        <Label Name="lbl_Descr" Content="Nome Grupo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 100, 0, 0" Width="100" />
+        <TextBox Name="txt_Descr" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,105,0,0" TextWrapping="Wrap" Text="" Height="20" Width="220" LostFocus="Txt_Descr_LostFocus" KeyDown="Txt_Descr_KeyDown"/>
+        <Label Name="lbl_Status" Content="Estado" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 135, 0, 0" Width="90" />
+        <ComboBox Name="cbx_Status" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="110, 135, 0, 0" Height="20" Width="120" />
+
+        <Button Name="btn_Save" Content="Gravar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110, 165, 0, 0" Width="60" Height="20" Click="Btn_Save_Click"/>
+        <Button Name="btn_Close" Content="Fechar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180, 165, 0, 0" Width="60" Height="20" Click="Btn_Close_Click"/>
+    </Grid>
+</Window>

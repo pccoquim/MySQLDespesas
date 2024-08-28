@@ -1,0 +1,104 @@
+﻿<!--
+frm_0002_Login.xaml
+Autor: Paulo da Cruz Coquim
+Data: 07.06.2024
+Versão: 1.0.0
+-->
+<Window x:Class="GestaoDom.Frm_0002_Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestaoDom"
+        mc:Ignorable="d"
+        Icon="/Imagens/Login.png"
+        WindowStartupLocation="CenterScreen"
+        Title="Login"
+        Background="Aqua"
+        Height="170"
+        Width="320">
+    <Grid>
+        <Label x:Name="Lbl_User"
+               Content="Utilizador"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,20,0,0"
+               Width="86">
+        </Label>
+        <TextBox x:Name="Txt_User"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="140,25,0,0"
+                 Background="#FFEAEAEA"
+                 TextWrapping="Wrap"
+                 Text=""
+                 Height="20"
+                 Width="120"
+                 KeyDown="Txt_User_KeyDown">
+        </TextBox>
+
+        <Label x:Name="Lbl_Pw"
+               Content="Palavra-passe"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,55,0,0"
+               Width="86">
+        </Label>
+        <TextBox x:Name="Txt_Pw"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="140,60,0,0"
+                 Background="#FFEAEAEA"
+                 Text=""
+                 Height="20"
+                 Width="120"
+                 Visibility="Hidden">
+        </TextBox>
+        <PasswordBox x:Name="Pbx_Pw"
+                     PasswordChar="*"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Margin="140,60,0,0"
+                     Background="#FFEAEAEA"
+                     Height="20"
+                     Width="120"
+                     KeyDown="Pbx_Pw_KeyDown">
+        </PasswordBox>
+        <Button x:Name="Btn_ShowPw"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="260, 60,0,0"
+                Height="20"
+                Width="20"
+                Click="Btn_ShowPw_Click">
+            <Image Source="/Imagens/No.png"></Image>
+        </Button>
+        
+        
+        
+        <Button x:Name="Btn_Login"
+                Content="Login"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="140,104,0,0"
+                FontWeight="Bold"
+                Background="GreenYellow"
+                Height="20"
+                Width="46"
+                Click="Btn_Login_Click">
+        </Button>
+
+        <Button x:Name="Btn_Exit"
+                Content="Sair"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="200,104,0,0"
+                FontWeight="Bold"
+                Height="20"
+                Width="46"
+                Click="Btn_Exit_Click">
+        </Button>
+        
+        <Image x:Name="LoadingImage" Source="/Imagens/Ampulheta.gif" Visibility="Hidden" />
+    </Grid>
+</Window>

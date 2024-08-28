@@ -1,0 +1,28 @@
+﻿<!--
+Frm_200101_SaldoAnoMesCredDeb.xaml
+Autor: Paulo da Cruz Coquim
+Data: 07.06.2024
+Versão: 1.0.0
+-->
+<Window x:Class="GestaoDom.Frm_200101_SaldoAnoMesCredDeb"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestaoDom"
+        mc:Ignorable="d"
+        Icon="/Imagens/Saldo.png"
+        WindowStartupLocation="CenterScreen"
+        Title="Relatório de saldo por ano, mês com seleção de ano" Height="100" Width="400">
+    <Grid>
+        <Label Name="Lbl_Ano" Content="Ano" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60, 20, 0, 0" Width="40" />
+        <TextBox Name="Txt_Ano" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,25,0,0" HorizontalContentAlignment="Right" Height="20" Width="50" KeyUp="Txt_Ano_KeyUp"/>
+        <Button x:Name="Btn_Print" VerticalAlignment="Top" HorizontalAlignment="Left"  Margin="180,25,0,0" Height="20" Width="100" Click="Btn_Print_Click" IsEnabled="False">
+            <Button.Content>
+                <TextBlock Text="imprimir" TextWrapping="Wrap"/>
+            </Button.Content>
+        </Button>
+        
+    </Grid>
+</Window>
+

@@ -1,0 +1,63 @@
+﻿<!--
+Frm_03010202_DebitoCabEditEditDet.xaml
+Autor: Paulo da Cruz Coquim
+Data: 07.06.2024
+Versão: 1.0.0
+-->
+<Window x:Class="GestaoDom.Frm_03010202_DebitoCabEditEditDet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestaoDom"
+        mc:Ignorable="d"
+                Icon="/Imagens/Add.png"
+        WindowStartupLocation="CenterScreen"
+        Title="Adição de detalhes de debitos" Height="610" Width="400">
+    <Grid>
+        <Label Name="lbl_Linha" Content="Linha" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 10, 0, 0" Width="100" />
+        <TextBox Name="txt_Linha" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" Margin="150,15,0,0" IsReadOnly="True" TextWrapping="Wrap" Text="" IsTabStop="False" Height="20" Width="40" />
+        <Label Name="lbl_Cod" Content="Código" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 40, 0, 0" Width="100" />
+        <TextBox Name="txt_Codigo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,45,0,0" IsReadOnly="True" TextWrapping="Wrap" Text="" IsTabStop="False" Height="20" Width="140" />
+        <Label Name="lbl_Descr" Content="Artigo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 70, 0, 0" Width="100" />
+        <TextBox Name="txt_Descr" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,75,0,0" IsReadOnly="True" TextWrapping="Wrap" Text="" IsTabStop="False" Height="20" Width="220" />
+        <Label Name="lbl_Unidade" Content="Unidade" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 100, 0, 0" Width="100" />
+        <TextBox Name="txt_Unidade" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,105,0,0" IsReadOnly="True" TextWrapping="Wrap" Text="" IsTabStop="False" Height="20" Width="220" />
+        <Label Name="lbl_Qtd" Content="Quantidade" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 130, 0, 0" Width="100" />
+        <TextBox Name="txt_Quantidade" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" Margin="150,135,0,0" TextWrapping="Wrap" Text="" Height="20" Width="80" KeyDown="Txt_Quantidade_KeyDown" PreviewTextInput="Txt_Quantidade_PreviewTextInput" LostFocus="Txt_Quantidade_LostFocus" GotFocus="Txt_Quantidade_GotFocus" />
+        <Label Name="lbl_Preco" Content="Preço unitário" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 160, 0, 0" Width="100" />
+        <TextBox Name="txt_PrecoBase" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" Margin="150,165,0,0" TextWrapping="Wrap" Text="" Height="20" Width="80" KeyDown="Txt_PrecoBase_KeyDown" PreviewTextInput="Txt_PrecoBase_PreviewTextInput" LostFocus="Txt_PrecoBase_LostFocus" GotFocus="Txt_PrecoBase_GotFocus" />
+        <Label Name="lbl_Desc1" Content="% Desconto 1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 190, 0, 0" Width="100" />
+        <TextBox Name="txt_Desconto1" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" Margin="150,195,0,0" TextWrapping="Wrap" Text="" Height="20" Width="80" KeyDown="Txt_Desconto1_KeyDown" PreviewTextInput="Txt_Desconto1_PreviewTextInput" LostFocus="Txt_Desconto1_LostFocus" GotFocus="Txt_Desconto1_GotFocus" />
+        <Label Name="lbl_Desc2" Content="% Desconto 2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 220, 0, 0" Width="100" />
+        <TextBox Name="txt_Desconto2" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" Margin="150,225,0,0" TextWrapping="Wrap" Text="" Height="20" Width="80" KeyDown="Txt_Desconto2_KeyDown" PreviewTextInput="Txt_Desconto2_PreviewTextInput" LostFocus="Txt_Desconto2_LostFocus" GotFocus="Txt_Desconto2_GotFocus" />
+        <Label Name="lbl_ValorDesc" Content="Valor Desconto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 250, 0, 0" Width="100" />
+        <TextBox Name="txt_ValorDesconto" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" Margin="150,255,0,0" IsReadOnly="True" TextWrapping="Wrap" IsTabStop="False" Text="" Height="20" Width="80" />
+        <Label Name="lbl_ValorUnitario" Content="Valor final unitário" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 280, 0, 0" Width="110" />
+        <TextBox Name="txt_ValorUnitario" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" Margin="150,285,0,0" IsReadOnly="True" TextWrapping="Wrap" IsTabStop="False" Text="" Height="20" Width="80" />
+        <Label Name="lbl_ValorTotal" Content="Valor total final" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 310, 0, 0" Width="110" />
+        <TextBox Name="txt_ValorTotal" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" IsReadOnly="True" Margin="150,315,0,0" TextWrapping="Wrap" IsTabStop="False" Text="" Height="20" Width="80" />
+        <Label Name="lbl_Iva" Content="Taxa de IVA" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 340, 0, 0" Width="90" />
+        <ComboBox Name="cbx_IVA" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="150, 345, 0, 0" Height="20" Width="130" SelectionChanged="Cbx_IVA_SelectionChanged" />
+        <Label Name="lbl_Comb" Content="Combustivel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 370, 0, 0" Width="100" />
+        <CheckBox Name="ckb_Comb" Margin="150,375,10,10" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" />
+        <Label Name="lbl_Viatura" Content="Viatura" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 400, 0, 0" Width="90" />
+        <ComboBox Name="cbx_Viatura" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="150, 405, 0, 0" Height="20" Width="130" SelectionChanged="Cbx_Viatura_SelectionChanged" />
+        <Label Name="lbl_Kmi" Content="Quilometros anteriores" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 430, 0, 0" Width="140" />
+        <TextBox Name="txt_KMI" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" Margin="150,435,0,0" IsReadOnly="True" TextWrapping="Wrap" IsTabStop="False" Text="" Height="20" Width="80" />
+        <Label Name="lbl_KmF" Content="Quilometros atuais" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 460, 0, 0" Width="140" />
+        <TextBox Name="txt_KMF" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" Margin="150,465,0,0" TextWrapping="Wrap" Text="" Height="20" Width="80" KeyDown="Txt_KMF_KeyDown" PreviewTextInput="Txt_KMF_PreviewTextInput" LostFocus="Txt_KMF_LostFocus" GotFocus="Txt_KMF_GotFocus" />
+        <Label Name="lbl_KmEfetuados" Content="Quilometros efetuados" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 490, 0, 0" Width="140" />
+        <TextBox Name="txt_KME" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" Margin="150,495,0,0" IsReadOnly="True" TextWrapping="Wrap" IsTabStop="False" Text="" Height="20" Width="80" />
+        <Label Name="Lbl_Status" FontSize="10" Content="Estado" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200, 10, 0, 0" Width="50" FontWeight="Bold" />
+        <ComboBox Name="Cbx_Status" FontSize="12" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="250, 15, 0, 0" Height="20" Width="120" SelectionChanged="Cbx_Status_SelectionChanged" />
+
+        <Button Name="btn_Save" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="150, 525, 0, 0" Width="60" Height="40" Click="Btn_Save_Click">
+            <StackPanel>
+                <TextBlock Text="Guardar" HorizontalAlignment="Center"/>
+                <TextBlock Text="alterações" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button Name="btn_Close" Content="Fechar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="220, 525, 0, 0" Width="60" Height="40" Click="Btn_Close_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,134 @@
+using System;
+using System.Collections.Generic;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+
+namespace YourNamespace
+{
+    public partial class UserAcessos : Window
+    {
+        public static Users user = new Users();
+        private readonly UsersMan usersMan;
+
+        public UserAcessos(UsersMan usersManInicial)
+        {
+            InitializeComponent();
+            usersMan = usersManInicial;
+        }
+
+        private void UserAcessos_Loaded(object sender, RoutedEventArgs e)
+        {
+            user.MenuAcesso = ControloAcessos.GetAcessos(Convert.ToInt32(VariaveisGlobais.IdUserLogin));
+            var listaAcessos = ControloAcessos.GetAcessos(Convert.ToInt32(VariaveisGlobais.UserId));
+            LoadDgv_Acessos(listaAcessos);
+            try
+            {
+                using (OleDbConnection connection = DBConnection.GetConnection())
+                {
+                    connection.Open();
+                    string query = "SELECT user_id, user_userID FROM users WHERE user_id = ?";
+                    using (OleDbCommand command = new OleDbCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@userID", VariaveisGlobais.UserId);
+                        using (OleDbDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                int userId = reader.GetInt32(reader.GetOrdinal("user_id"));
+                                string useruserId = reader.GetString(reader.GetOrdinal("user_userID"));
+
+                                Lbl_UserID.Content = useruserId;
+                                Lbl_UserIDID.Content = userId.ToString();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Erro ao selecionar!");
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro a ligar à base de dados: " + ex.Message);
+                return;
+            }
+        }
+
+        private void UserAcessos_Closed(object sender, EventArgs e)
+        {
+            usersMan.LoadDgv_Acessos();
+        }
+
+        private void LoadDgv_Acessos(List<ControloAcessos> listaAcessos)
+        {
+            Dgv_Acessos.ColumnHeaderHeight = 30;
+            Dgv_Acessos.FontSize = 12;
+
+            // ... Define columns and populate data ...
+
+            try
+            {
+                foreach (var item in listaAcessos)
+                {
+                    Dgv_Acessos.Items.Add(new
+                    {
+                        opcaoId = item.OpcaoId,
+                        opcaoCod = item.OpcaoCod,
+                        opcaoDescr = item.OpcaoDesc,
+                        opcaoNivel = item.OpcaoNivel,
+                        idReg = item.IdReg,
+                        acs_userid = Convert.ToInt32(VariaveisGlobais.UserId),
+                        opcaoAcesso = item.OpcaoAcesso,
+                        acesso = item.OpcaoAcesso
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro de conversão" + ex.Message);
+            }
+        }
+
+        private void Btn_Fechar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Btn_Save_Click(object sender, RoutedEventArgs e)
+        {
+            var listaAcessos = new List<ControloAcessos>();
+
+            foreach (var item in Dgv_Acessos.Items)
+            {
+                var row = (dynamic)item;
+                var acesso_chk = Convert.ToBoolean(row.acesso);
+
+                if (Convert.ToBoolean(row.opcaoAcesso) != acesso_chk)
+                {
+                    listaAcessos.Add(new ControloAcessos(
+                        Convert.ToInt32(row.opcaoId),
+                        Convert.ToString(row.opcaoCod),
+                        Convert.ToInt32(row.idReg),
+                        acesso_chk));
+                }
+            }
+
+            var userid = Convert.ToInt32(Lbl_UserIDID.Content);
+            if (listaAcessos.Count > 0)
+            {
+                if (new ControloAcessos().Save(userid, listaAcessos) == "Ok")
+                {
+                    MessageBox.Show("Acessos gravados com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possivel gravar! Por favor, tente mais tarde!");
+                }
+            }
+            this.Close();
+        }
+    }
+}

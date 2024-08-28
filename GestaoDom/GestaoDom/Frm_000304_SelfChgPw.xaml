@@ -1,0 +1,160 @@
+﻿<!--
+frm_000304_SelfChgPw.xaml
+Autor: Paulo da Cruz Coquim
+Data: 07.06.2024
+Versão: 1.0.0
+-->
+<Window x:Class="GestaoDom.Frm_000304_SelfChgPw"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Icon="/Imagens/ChgPw.png"
+        WindowStartupLocation="CenterScreen"
+        Title="Alteração de palavra-passe"
+        Background="Aqua"
+        Height="180"
+        Width="350">
+    <Grid>
+        <Label x:Name="Lbl_OldPw"
+               Content="Palavra-passe atual"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,10,0,0"
+               Width="170">
+        </Label>
+        <PasswordBox x:Name="Pbx_OldPw"
+                     PasswordChar="*"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Margin="190,15,0,0"
+                     Background="#FFEAEAEA"
+                     Height="20"
+                     Width="120"
+                     KeyDown="Pbx_OldPw_KeyDown">
+        </PasswordBox>
+        <TextBox x:Name="Txt_OldPw"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="190,15,0,0"
+                 Background="#FFEAEAEA"
+                 Text=""
+                 Height="20"
+                 Width="120"
+                 Visibility="Hidden"
+                 KeyDown="Txt_OldPw_KeyDown">
+            
+        </TextBox>
+        <Button Name="Btn_ShowOldPw"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="310,15,0,0"
+                Height="20"
+                Width="20"
+                Click="Btn_ShowOldPw_Click">
+            <Image Source="/Imagens/No.png"></Image>
+        </Button>
+
+        <Label x:Name="Lbl_Pw"
+               Content=" Nova palavra-passe"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,40,0,0"
+               Width="170">
+        </Label>
+        <PasswordBox x:Name="Pbx_Pw"
+                     PasswordChar="*"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Margin="190,45,0,0"
+                     Background="#FFEAEAEA"
+                     Height="20"
+                     Width="120"
+                     KeyDown="Pbx_Pw_KeyDown">
+        </PasswordBox>
+        <TextBox x:Name="Txt_Pw"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="190,45,0,0"
+                 Background="#FFEAEAEA"
+                 TextWrapping="Wrap"
+                 Text=""
+                 Height="20"
+                 Width="120"
+                 Visibility="Hidden"
+                 KeyDown="Txt_Pw_KeyDown">
+        </TextBox>
+        <Button x:Name="Btn_ShowPw"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="310,45,0,0"
+                Height="20"
+                Width="20"
+                Click="Btn_ShowPw_Click">
+            <Image Source="/Imagens/No.png"/>
+        </Button>
+
+        <Label x:Name="Lbl_PwConf"
+               Content="Confirmação de palavra-passe"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,70,0,0"
+               Width="170">
+        </Label>
+        <PasswordBox x:Name="Pbx_PwConf"
+                     PasswordChar="*"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Margin="190,75,0,0"
+                     Background="#FFEAEAEA"
+                     Height="20"
+                     Width="120"
+                     KeyDown="Pbx_PwConf_KeyDown">
+        </PasswordBox>
+        <TextBox x:Name="Txt_PwConf"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="190,75,0,0"
+                 TextWrapping="Wrap"
+                 Text=""
+                 Height="20"
+                 Width="120"
+                 Visibility="Hidden"
+                 KeyDown="Txt_PwConf_KeyDown">
+        </TextBox>
+        <Button x:Name="Btn_ShowPwConf"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="310,75,0,0"
+                Height="20"
+                Width="20"
+                Click="Btn_ShowPwConf_Click">
+            <Image Source="/Imagens/No.png"/>
+        </Button>
+
+        <Button x:Name="Btn_Save"
+                Content="Alterar"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="190,105,0,0"
+                FontWeight="Bold"
+                Background="Orange"
+                Width="60"
+                Height="20"
+                Click="Btn_Save_Click">
+        </Button>
+
+        <Button x:Name="Btn_Close"
+                Content="Fechar"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="260,105,0,0"
+                FontWeight="Bold"
+                Width="60"
+                Height="20"
+                Click="Btn_Close_Click">
+        </Button>
+    </Grid>
+</Window>
+

@@ -1,0 +1,74 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Paulo\\Informatica\\Programacao\\WPF_C#\\MySQLDespesas\\GestaoDom\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{28952160-6161-473F-A236-49E6984B210E}|GestaoDom\\GestaoDom.csproj|d:\\paulo\\informatica\\programacao\\wpf_c#\\mysqldespesas\\gestaodom\\gestaodom\\cls_0001_dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28952160-6161-473F-A236-49E6984B210E}|GestaoDom\\GestaoDom.csproj|solutionrelative:gestaodom\\cls_0001_dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28952160-6161-473F-A236-49E6984B210E}|GestaoDom\\GestaoDom.csproj|d:\\paulo\\informatica\\programacao\\wpf_c#\\mysqldespesas\\gestaodom\\gestaodom\\cls_0000_cryptography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28952160-6161-473F-A236-49E6984B210E}|GestaoDom\\GestaoDom.csproj|solutionrelative:gestaodom\\cls_0000_cryptography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Cls_0001_DBConnection.cs",
+              "DocumentMoniker": "D:\\Paulo\\Informatica\\Programacao\\WPF_C#\\MySQLDespesas\\GestaoDom\\GestaoDom\\Cls_0001_DBConnection.cs",
+              "RelativeDocumentMoniker": "GestaoDom\\Cls_0001_DBConnection.cs",
+              "ToolTip": "D:\\Paulo\\Informatica\\Programacao\\WPF_C#\\MySQLDespesas\\GestaoDom\\GestaoDom\\Cls_0001_DBConnection.cs",
+              "RelativeToolTip": "GestaoDom\\Cls_0001_DBConnection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T15:43:05.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Cls_0000_Cryptography.cs",
+              "DocumentMoniker": "D:\\Paulo\\Informatica\\Programacao\\WPF_C#\\MySQLDespesas\\GestaoDom\\GestaoDom\\Cls_0000_Cryptography.cs",
+              "RelativeDocumentMoniker": "GestaoDom\\Cls_0000_Cryptography.cs",
+              "ToolTip": "D:\\Paulo\\Informatica\\Programacao\\WPF_C#\\MySQLDespesas\\GestaoDom\\GestaoDom\\Cls_0000_Cryptography.cs",
+              "RelativeToolTip": "GestaoDom\\Cls_0000_Cryptography.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T14:56:40.938Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

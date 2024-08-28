@@ -1,0 +1,180 @@
+﻿<!--
+frm_000301_UserAdd.xaml
+Autor: Paulo da Cruz Coquim
+Data: 07.06.2024
+Versão: 1.0.0
+-->
+<Window x:Class="GestaoDom.Frm_000301_UserAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestaoDom"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Icon="/Imagens/UserAdd.png"
+        Background="Aqua"
+        Title="Adicionar utilizador"
+        Height="230"
+        Width="450">
+    <Grid>
+        <Label x:Name="Lbl_UserID"
+               Content="ID de utilizador"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,10,0,0"
+               Width="170">
+        </Label>
+        <TextBox x:Name="Txt_UserID"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="190,15,0,0"
+                 Background="#FFEAEAEA"
+                 TextWrapping="Wrap"
+                 Text=""
+                 Height="20"
+                 Width="120"
+                 KeyDown="Txt_UserId_KeyDown"
+                 LostFocus="Txt_UserID_LostFocus">
+        </TextBox>
+
+        <Label x:Name="Lbl_UserName"
+               Content="Nome do utilizador"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,40,0,0"
+               Width="170">
+        </Label>
+        <TextBox x:Name="Txt_UserName"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="190,45,0,0"
+                 Background="#FFEAEAEA"
+                 TextWrapping="Wrap"
+                 Text=""
+                 Height="20"
+                 Width="220"
+                 KeyDown="Txt_UserName_KeyDown"
+                 LostFocus="Txt_UserName_LostFocus">
+        </TextBox>
+
+        <Label x:Name="Lbl_Type"
+               Content="Tipo de utilizador"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,70,0,0"
+               Width="170">
+        </Label>
+        <ComboBox x:Name="Cbx_Type"
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Left"
+                  Margin="190,75,0,0"
+                  Height="20"
+                  Width="120"
+                  KeyDown="Cbx_Type_KeyDown">
+        </ComboBox>
+
+        <Label x:Name="Lbl_Pw"
+               Content="Palavra-passe"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,100,0,0"
+               Width="170">
+        </Label>
+        <PasswordBox x:Name="Pbx_Pw"
+                     PasswordChar="*"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Margin="190,105,0,0"
+                     Background="#FFEAEAEA"
+                     Height="20"
+                     Width="120"
+                     KeyDown="Pbx_Pw_KeyDown">
+        </PasswordBox>
+        <TextBox x:Name="Txt_Pw"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="190,105,0,0"
+                 Background="#FFEAEAEA"
+                 TextWrapping="Wrap"
+                 Text=""
+                 Height="20"
+                 Width="120"
+                 Visibility="Hidden"
+                 KeyDown="Txt_Pw_KeyDown">
+        </TextBox>
+        <Button x:Name="Btn_ShowPw"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="310,105,0,0"
+                Height="20"
+                Width="20"
+                Click="Btn_ShowPw_Click">
+            <Image Source="/Imagens/No.png"></Image>
+        </Button>
+
+
+        <Label x:Name="Lbl_PwConf"
+               Content="Confirmação de palavra-passe"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,130,0,0"
+               Width="170">
+        </Label>
+        <PasswordBox x:Name="Pbx_PwConf"
+                     PasswordChar="*"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Margin="190,135,0,0"
+                     Background="#FFEAEAEA"
+                     Height="20"
+                     Width="120"
+                     KeyDown="Pbx_PwConf_KeyDown">
+        </PasswordBox>
+        <TextBox x:Name="Txt_PwConf"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="190,135,0,0"
+                 Background="#FFEAEAEA"
+                 TextWrapping="Wrap"
+                 Text=""
+                 Height="20"
+                 Width="120"
+                 Visibility="Hidden"
+                 KeyDown="Txt_PwConf_KeyDown">
+        </TextBox>
+        <Button x:Name="Btn_ShowPwConf"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="310,135,0,0"
+                Height="20"
+                Width="20"
+                Click="Btn_ShowPwConf_Click">
+            <Image Source="/Imagens/No.png"></Image>
+        </Button>
+
+
+        <Button x:Name="Btn_Save"
+                Content="Adicionar"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="190,165,0,0"
+                FontWeight="Bold"
+                Background="GreenYellow"
+                Width="60"
+                Height="20"
+                Click="Btn_Save_Click">
+        </Button>
+
+        <Button x:Name="Btn_Close"
+                Content="Fechar"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="260,165,0,0"
+                FontWeight="Bold"
+                Width="60"
+                Height="20"
+                Click="Btn_Close_Click">
+        </Button>
+    </Grid>
+</Window>

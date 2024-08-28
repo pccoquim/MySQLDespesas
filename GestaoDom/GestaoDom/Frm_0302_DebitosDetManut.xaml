@@ -1,0 +1,492 @@
+﻿<!--
+Frm_0302_DebitosDetManut.xaml
+Autor: Paulo da Cruz Coquim
+Data: 07.06.2024
+Data alteração: 24.06.2024
+Versão: 1.1.0
+-->
+<Window x:Class="GestaoDom.Frm_0302_DebitosDetManut"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestaoDom"
+        mc:Ignorable="d"
+        Icon="/Imagens/Add.png"
+        WindowStartupLocation="CenterScreen"
+        Title="Manutenção de detalhes de movimentos a débito" Height="450" Width="1200">
+    <ContentControl.Resources>
+        <Style TargetType="ListViewItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+        
+        <DataTemplate x:Key="Unidade">
+            <TextBlock HorizontalAlignment="Left" Text="{Binding Unidade}"/>
+        </DataTemplate>
+    </ContentControl.Resources>
+    
+    <Grid Margin="0,0,120,0">
+        <Grid Name="largura" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Name="largurawidth0"></Border>
+            <Border Grid.Column="1" Name="largurawidth1"></Border>
+            <Border Grid.Column="2" Name="largurawidth2"></Border>
+            <Border Grid.Column="3" Name="largurawidth3"></Border>
+        </Grid>
+        <ListView Name="ListArtigos"
+                  VerticalContentAlignment="Top"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  AlternationCount="2"
+                  Margin="10,40,0,207"
+                  SelectionChanged="ListArtigos_SelectionChanged"
+                  MouseDoubleClick="ListArtigos_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="{Binding ElementName=largurawidth0, Path=ActualWidth}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="ID">ID</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Id}"
+                                           TextAlignment="Center" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="{Binding ElementName=largurawidth1, Path=ActualWidth}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Cod">Cod</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Cod}"
+                                           TextAlignment="Center" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="{Binding ElementName=largurawidth2, Path=ActualWidth}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Descr">Artigo</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Artigo}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    
+                    <GridViewColumn Width="{Binding ElementName=largurawidth3, Path=ActualWidth}"
+                                    CellTemplate="{StaticResource Unidade}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Unidade">Unidade</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+            <ListView.Resources>
+                <!-- Custom style for the header row -->
+                <Style TargetType="{x:Type GridViewColumnHeader}">
+                    <Setter Property="Background"
+                            Value="LightSkyBlue" />
+                    <Setter Property="Foreground"
+                            Value="Black" />
+                    <Setter Property="HorizontalContentAlignment"
+                            Value="Center" />
+                    <Setter Property="VerticalContentAlignment"
+                            Value="Center" />
+                </Style>
+            </ListView.Resources>
+        </ListView>
+
+        <Label Name="lbl_Linhas"
+               Content="Detalhes do ducumento"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Bottom"
+               HorizontalContentAlignment="Left"
+               Margin="10, 0, 0, 184"/>
+
+        <Grid Name="largura_a" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.05*"></ColumnDefinition>
+                <ColumnDefinition Width="0.12*"></ColumnDefinition>
+                <ColumnDefinition Width="0.16*"></ColumnDefinition>
+                <ColumnDefinition Width="0.09*"></ColumnDefinition>
+                <ColumnDefinition Width="0.08*"></ColumnDefinition>
+                <ColumnDefinition Width="0.07*"></ColumnDefinition>
+                <ColumnDefinition Width="0.07*"></ColumnDefinition>
+                <ColumnDefinition Width="0.07*"></ColumnDefinition>
+                <ColumnDefinition Width="0.07*"></ColumnDefinition>
+                <ColumnDefinition Width="0.07*"></ColumnDefinition>
+                <ColumnDefinition Width="0.07*"></ColumnDefinition>
+                <ColumnDefinition Width="0.07*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Name="largurawidth0_a"></Border>
+            <Border Grid.Column="1" Name="largurawidth1_a"></Border>
+            <Border Grid.Column="2" Name="largurawidth2_a"></Border>
+            <Border Grid.Column="3" Name="largurawidth3_a"></Border>
+            <Border Grid.Column="4" Name="largurawidth4_a"></Border>
+            <Border Grid.Column="5" Name="largurawidth5_a"></Border>
+            <Border Grid.Column="6" Name="largurawidth6_a"></Border>
+            <Border Grid.Column="7" Name="largurawidth7_a"></Border>
+            <Border Grid.Column="8" Name="largurawidth8_a"></Border>
+            <Border Grid.Column="9" Name="largurawidth9_a"></Border>
+            <Border Grid.Column="10" Name="largurawidth10_a"></Border>
+            <Border Grid.Column="11" Name="largurawidth11_a"></Border>
+        </Grid>
+        <ListView Name="ListDebitosDet"
+                  VerticalContentAlignment="Top"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  AlternationCount="2"
+                  Margin="10,0,0,10"
+                  Height="174"
+                  VerticalAlignment="Bottom"
+                  SelectionChanged="ListDebitosDet_SelectionChanged" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="{Binding ElementName=largurawidth0_a, Path=ActualWidth}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Linha">Linha</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Linha}"
+                                           TextAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="{Binding ElementName=largurawidth1_a, Path=ActualWidth}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Cod">Código</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Codigo}"
+                                           TextAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="{Binding ElementName=largurawidth2_a, Path=ActualWidth}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Descr">Artigo</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Descr}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="{Binding ElementName=largurawidth3_a, Path=ActualWidth}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Unidade">Unidade</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Unidade}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="{Binding ElementName=largurawidth4_a, Path=ActualWidth}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Quantidade">Quantidade</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock TextAlignment="Right"
+                                           Text="{Binding Quantidade}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="{Binding ElementName=largurawidth5_a, Path=ActualWidth}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="PrecoUnitario">Preço</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding PrecoUnitario, StringFormat={}{0:N4} €}"
+                                           TextAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="{Binding ElementName=largurawidth6_a, Path=ActualWidth}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Desconto1">Desc 1</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Desconto1, StringFormat={}{0:N4} %}"
+                                           TextAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="{Binding ElementName=largurawidth7_a, Path=ActualWidth}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Desconto2">Desc 2</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Desconto2, StringFormat={}{0:N4} %}"
+                                           TextAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="{Binding ElementName=largurawidth8_a, Path=ActualWidth}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="ValorDesconto">Valor Desc.</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ValorDesconto, StringFormat={}{0:N4} €}"
+                                           TextAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="{Binding ElementName=largurawidth9_a, Path=ActualWidth}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="ValorUnitario">Preço U. Final</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding PrecoFinalUnitario, StringFormat={}{0:N4} €}"
+                                           TextAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="{Binding ElementName=largurawidth10_a, Path=ActualWidth}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="ValorTotal">Valor total</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ValorTotal, StringFormat={}{0:N2} €}"
+                                           TextAlignment="Right" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="{Binding ElementName=largurawidth11_a, Path=ActualWidth}" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="IVA">IVA</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding TaxaIVA, StringFormat={}{0:N2} %}"
+                                           TextAlignment="Center" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+            <ListView.Resources>
+                <!-- Custom style for the header row -->
+                <Style TargetType="{x:Type GridViewColumnHeader}">
+                    <Setter Property="Background"
+                            Value="LightSkyBlue" />
+                    <Setter Property="Foreground"
+                            Value="Black" />
+                    <Setter Property="HorizontalContentAlignment"
+                            Value="Center" />
+                    <Setter Property="VerticalContentAlignment"
+                            Value="Center" />
+                </Style>
+            </ListView.Resources>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment"
+                            Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+
+        <Label x:Name="lbl_Terceiro"
+               Content="Terceiro"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Left"
+               HorizontalContentAlignment="Right"
+               Margin="10, 10, 0, 0"
+               Height="30"
+               Width="60" />
+        <TextBox Name="txt_Terceiro"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="80,15,0,0"
+                 TextWrapping="Wrap"
+                 Text=""
+                 Height="20"
+                 Width="150" />
+        
+        <Label x:Name="lbl_Conta"
+               Content="Conta"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Left"
+               HorizontalContentAlignment="Right"
+               Margin="240, 10, 0, 0"
+               Height="30"
+               Width="60" />
+        <TextBox Name="txt_Conta"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="310,15,0,0"
+                 TextWrapping="Wrap"
+                 Text=""
+                 Height="20"
+                 Width="150" />
+        
+        <Label Name="lbl_Data"
+               Content="Data"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               HorizontalContentAlignment="Right"
+               Margin="470, 10, 0, 0"
+               Width="40" />
+        <TextBox Name="txt_Data"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 HorizontalContentAlignment="Center"
+                 Margin="520,15,0,0"
+                 TextWrapping="Wrap"
+                 Text=""
+                 Height="20"
+                 Width="80" />
+        
+        <Label Name="lbl_NDoc"
+               Content="Nº documento" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               HorizontalContentAlignment="Right" 
+               Margin="610, 10, 0, 0"
+               Width="100" />
+        <TextBox Name="txt_NDoc"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 HorizontalContentAlignment="Right"
+                 Margin="720,15,0,0"
+                 TextWrapping="Wrap"
+                 Text=""
+                 Height="20"
+                 Width="130" />
+        
+        <Label Name="lbl_Valor" 
+               Content="Valor" 
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               HorizontalContentAlignment="Right"
+               Margin="860, 10, 0, 0"
+               Width="60" />
+        <TextBox Name="txt_Valor"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 HorizontalContentAlignment="Right"
+                 Margin="930,15,0,0"
+                 TextWrapping="Wrap"
+                 Text=""
+                 Height="20"
+                 Width="130" />
+        
+        <!-- Botão para adicionar produtos (linha) -->
+        <Button x:Name="btn_Add"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Margin="0,40,-110,0"
+                Height="30"
+                Width="100"
+                Click="Btn_Add_Click">
+            <Button.Content>
+                <TextBlock Text="Adicionar"
+                           TextWrapping="Wrap"/>
+            </Button.Content>
+        </Button>
+
+        <!-- Botão para adicionar novos produtos -->
+        <Button x:Name="Btn_Add_NewProdut"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Margin="0,120,-110,0"
+                Height="30"
+                Width="100"
+                Click="Btn_Add_NewProdut_Click">
+            <Button.Content>
+                <TextBlock Text="Novo artigo"
+                   TextWrapping="Wrap"/>
+            </Button.Content>
+        </Button>
+
+        <!-- Botão para atualizar a lista de produtos -->
+        <Button x:Name="Btn_Refresh"
+        VerticalAlignment="Top"
+        HorizontalAlignment="Right"
+        Margin="0,160,-110,0"
+        Height="30"
+        Width="100"
+        Click="Btn_Refresh_Click">
+            <Button.Content>
+                <TextBlock Text="Atualizar artigos"
+           TextWrapping="Wrap"/>
+            </Button.Content>
+        </Button>
+
+        <!-- Botão para alterar produtos (linha) -->
+        <Button x:Name="btn_Edit"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Margin="0,54,-110,155"
+                Height="30"
+                Width="100"
+                Click="Btn_Edit_Click">
+            <Button.Content>
+                <TextBlock Text="Alterar"
+                           TextWrapping="Wrap"/>
+            </Button.Content>
+        </Button>
+        <!-- Botão para eliminar produtos (linha) -->
+        <Button x:Name="btn_Delete"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Margin="0,94,-110,115"
+                Height="30"
+                Width="100"
+                Click="Btn_Delete_Click">
+            <Button.Content>
+                <TextBlock Text="Eliminar"
+                           TextWrapping="Wrap"/>
+            </Button.Content>
+        </Button>
+        <!-- Botão para finalizar o documento -->
+        <Button x:Name="btn_Finalize"
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Right" 
+                Margin="0,0,-110,70"
+                Height="30"
+                Width="100"
+                Click="Btn_Finalize_Click">
+            <Button.Content>
+                <TextBlock Text="Finalizar doc." 
+                           TextWrapping="Wrap"/>
+            </Button.Content>
+        </Button>
+        
+        <Button x:Name="btn_Close"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Margin="0,0,-110,10"
+                Height="30"
+                Width="100"
+                Click="Btn_Close_Click">
+            <Button.Content>
+                <TextBlock Text="Fechar"
+                           TextWrapping="Wrap"/>
+            </Button.Content>
+        </Button>
+    </Grid>
+</Window>

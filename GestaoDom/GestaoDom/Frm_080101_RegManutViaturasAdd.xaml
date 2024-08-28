@@ -1,0 +1,242 @@
+﻿<!--
+Frm_080101_RegManutViariasAdd.xaml
+Autor: Paulo da Cruz Coquim
+Data: 07.06.2024
+Versão: 1.0.0
+-->
+<Window x:Class="GestaoDom.Frm_080101_RegManutViaturasAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestaoDom"
+        mc:Ignorable="d"
+        Icon="/Imagens/Add.png"
+        WindowStartupLocation="CenterScreen"
+        Title="Adição de manutenções a viaturas"
+        Background="Aqua"
+        Height="460" 
+        Width="380">
+
+    <Window.Resources>
+        <Style x:Key="CheckBoxStyle" TargetType="{x:Type CheckBox}">
+            <Style.Triggers>
+                <Trigger Property="IsFocused" Value="True">
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="10" Opacity="0.5"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Button" 
+               x:Key="RedCloseButtonStyle">
+            <Setter Property="Foreground" 
+                    Value="Red"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Label Name="Lbl_Viatura" 
+               Content="Viatura" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               Margin="10, 10, 0, 0" 
+               Width="100" />
+        <ComboBox Name="Cbx_Viatura" 
+                  VerticalAlignment="Top" 
+                  HorizontalAlignment="Left" 
+                  Margin="110, 15, 0, 0" 
+                  Height="20" 
+                  Width="240" 
+                  KeyDown="Cbx_Viatura_KeyDown"/>
+
+        <Label Name="Lbl_Descr" 
+               Content="Descrição" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               Margin="10, 40, 0, 0" 
+               Width="100" />
+        <TextBox Name="Txt_Descr" 
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Top" 
+                 Margin="110,45,0,0" 
+                 HorizontalContentAlignment="Left"
+                 Background="AntiqueWhite"
+                 TextWrapping="Wrap" 
+                 Text="" 
+                 Height="20" 
+                 Width="240" 
+                 MaxLength="100"
+                 KeyDown="Txt_Descr_KeyDown"/>
+
+        <Label Name="Lbl_Data" 
+               Content="Data execução" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               Margin="10, 70, 0, 0" 
+               Width="100" />
+        <TextBox Name="Txt_Data" 
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Top" 
+                 Margin="110,75,0,0" 
+                 Background="AntiqueWhite"
+                 TextWrapping="Wrap" 
+                 Text="" 
+                 Height="20" 
+                 Width="80" 
+                 LostFocus="Txt_Data_LostFocus" 
+                 KeyDown="Txt_Data_KeyDown" 
+                 TextChanged="Txt_Data_TextChanged" />
+
+        <Label Name="Lbl_Km" 
+               Content="Km execução" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               Margin="10, 100, 0, 0" 
+               Width="100" />
+        <TextBox Name="Txt_Km" 
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Top" 
+                 Margin="110,105,0,0" 
+                 TextWrapping="Wrap" 
+                 Background="AntiqueWhite"
+                 Text="" 
+                 Height="20" 
+                 Width="80" 
+                 PreviewTextInput="Txt_Km_PreviewTextInput" 
+                 KeyDown="Txt_Km_KeyDown"/>
+
+        <Label Name="Lbl_Mudou" 
+               Content="Mudou:" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               Margin="10, 130, 0, 0" 
+               Width="100" />
+        <Label Name="Lbl_Oleo" 
+               Content="Oleo" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               Margin="15, 160, 0, 0" 
+               Width="100" />
+        <CheckBox x:Name="Ckb_Oleo" 
+                  IsChecked="{Binding Oleo, Mode=TwoWay}" 
+                  Margin="110,165,0,0" 
+                  KeyDown="Ckb_Oleo_KeyDown"
+                  Background="AntiqueWhite"
+                  FocusVisualStyle="{x:Null}" 
+                  Style="{StaticResource CheckBoxStyle}"/>
+
+        <Label Name="Lbl_FiltroOleo" 
+               Content="Filtro de oleo" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               Margin="15, 190, 0, 0" 
+               Width="100" />
+        <CheckBox Name="Ckb_FiltroOleo" 
+                  IsChecked="{Binding FiltroOleo, Mode=TwoWay}" 
+                  Margin="110,195,0,0" 
+                  KeyDown="Ckb_FiltroOleo_KeyDown"
+                  Background="AntiqueWhite"
+                  FocusVisualStyle="{x:Null}" 
+                  Style="{StaticResource CheckBoxStyle}"/>
+
+        <Label Name="Lbl_FiltroAr" 
+               Content="Filtro de ar" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               Margin="15, 220, 0, 0" 
+               Width="100" />
+        <CheckBox Name="Ckb_FiltroAr" 
+                  IsChecked="{Binding FiltroAr, Mode=TwoWay}" 
+                  Margin="110,225,0,0" 
+                  KeyDown="Ckb_FiltroAr_KeyDown"
+                  Background="AntiqueWhite"
+                  FocusVisualStyle="{x:Null}" 
+                  Style="{StaticResource CheckBoxStyle}"/>
+
+        <Label Name="Lbl_Efetuado" 
+               Content="Outro serviço" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               Margin="15, 250, 0, 0" 
+               Width="100" />
+        <TextBox Name="Txt_Efetuado" 
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Top" 
+                 Margin="110,255,0,0" 
+                 HorizontalContentAlignment="Left"
+                 Background="AntiqueWhite"
+                 TextWrapping="Wrap" 
+                 Text="" 
+                 Height="20" 
+                 Width="240" 
+                 MaxLength="100"
+                 KeyDown="Txt_Efetuado_KeyDown"/>
+
+        <Label Name="Lbl_KmProxima" 
+               Content="Km próxima" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               Margin="10, 280, 0, 0" 
+               Width="100" />
+        <TextBox Name="Txt_KmProxima" 
+                 HorizontalAlignment="Left" 
+                 VerticalAlignment="Top" 
+                 Margin="110,285,0,0"
+                 Background="AntiqueWhite"
+                 TextWrapping="Wrap" 
+                 Text="" 
+                 Height="20" 
+                 Width="80" 
+                 PreviewTextInput="Txt_KmProxima_PreviewTextInput" 
+                 KeyDown="Txt_KmProxima_KeyDown"/>
+
+        <Button
+            Name="Btn_Components"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="110, 315, 0, 0"
+            Width="80"
+            Height="40"
+            Click="Btn_Components_Click">
+            <StackPanel>
+                <TextBlock Text="Adicionar" 
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"/>
+                <TextBlock Text="Componentes"
+                           HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <Button Name="Btn_Save" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Margin="110, 365, 0, 0"
+                Width="80" 
+                Height="40" 
+                Click="Btn_Save_Click">
+            <StackPanel>
+                <TextBlock Text="Gravar" 
+                               FontWeight="Bold"
+                               HorizontalAlignment="Center"/>
+                <TextBlock Text=" sem componentes"
+                               FontSize="9"
+                               HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <Button Name="Btn_Close" 
+                Content="Fechar" 
+                FontWeight="Bold"
+                Style="{StaticResource RedCloseButtonStyle}"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Margin="210, 365, 0, 0" 
+                Width="80" 
+                Height="40" 
+                Click="Btn_Close_Click">
+        </Button>
+    </Grid>
+</Window>
+    

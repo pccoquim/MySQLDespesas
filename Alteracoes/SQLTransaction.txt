@@ -1,0 +1,94 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
+
+public partial class MainForm : Form
+{
+    private List<InvoiceLine> invoiceLines = new List<InvoiceLine>();
+    private SqlConnection connection;
+    private SqlTransaction transaction;
+
+    public MainForm()
+    {
+        InitializeComponent();
+
+        // Inicialize a conexão com o banco de dados aqui
+        connection = new SqlConnection("your_connection_string_here");
+        connection.Open();
+    }
+
+    private void Btn_AddLine_Click(object sender, EventArgs e)
+    {
+        // Adicione a linha atual à lista de linhas da fatura
+        InvoiceLine line = new InvoiceLine
+        {
+            Description = txt_Description.Text,
+            Quantity = Convert.ToInt32(txt_Quantity.Text),
+            // Outros campos da linha da fatura
+        };
+        invoiceLines.Add(line);
+
+        // Limpe os campos do formulário após adicionar a linha
+        ClearFormFields();
+    }
+
+    private void Btn_FinalizeInvoice_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            // Inicie a transação
+            transaction = connection.BeginTransaction();
+
+            // Insira o cabeçalho da fatura (se ainda não inserido)
+            InsertInvoiceHeader();
+
+            // Insira todas as linhas da fatura
+            foreach (var line in invoiceLines)
+            {
+                InsertInvoiceLine(line);
+            }
+
+            // Faça commit da transação se tudo estiver bem
+            transaction.Commit();
+            MessageBox.Show("Fatura criada com sucesso!");
+        }
+        catch (Exception ex)
+        {
+            // Em caso de erro, faça rollback da transação e mostre uma mensagem de erro
+            transaction.Rollback();
+            MessageBox.Show("Erro ao criar a fatura: " + ex.Message);
+        }
+        finally
+        {
+            // Certifique-se de fechar a conexão
+            connection.Close();
+        }
+    }
+
+    private void InsertInvoiceHeader()
+    {
+        // Implemente a inserção do cabeçalho da fatura aqui
+    }
+
+    private void InsertInvoiceLine(InvoiceLine line)
+    {
+        // Implemente a inserção da linha da fatura aqui
+    }
+
+    private void ClearFormFields()
+    {
+        // Limpe os campos do formulário
+        txt_Description.Text = string.Empty;
+        txt_Quantity.Text = string.Empty;
+        // Limpe outros campos, se necessário
+    }
+}
+
+public class InvoiceLine
+{
+    public string Description { get; set; }
+    public int Quantity { get; set; }
+    // Outros campos da linha da fatura
+}

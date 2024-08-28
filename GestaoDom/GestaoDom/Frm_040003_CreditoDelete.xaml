@@ -1,0 +1,272 @@
+﻿<!--
+Frm_040003_CreditoDelete.xaml
+Autor: Paulo da Cruz Coquim
+Data: 07.06.2024
+Versão: 1.0.0
+-->
+<Window x:Class="GestaoDom.Frm_040003_CreditoDelete"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestaoDom"
+        mc:Ignorable="d"
+        Icon="/Imagens/Delete.png"
+        WindowStartupLocation="CenterScreen"
+        Title="Frm_040003_CreditosDelete"
+        Background="Aqua"
+        Height="390"
+        Width="400">
+    <Grid>
+        <Label x:Name="Lbl_Ref"
+               Content="Referência"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,10,0,0"
+               Width="100">
+        </Label>
+        <TextBox x:Name="Txt_Ref"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Background="AntiqueWhite"
+                 Margin="110,15,0,0"
+                 IsReadOnly="True"
+                 HorizontalContentAlignment="Right"
+                 Text=""
+                 Height="20"
+                 Width="50">
+        </TextBox>
+
+        <Label x:Name="Lbl_transf"
+               Content="Transferência"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,40,0,0"
+               Width="100">
+        </Label>
+        <CheckBox x:Name="Ckb_Transf"
+                  Margin="110,45,0,0"
+                  IsEnabled="False">
+        </CheckBox>
+
+        <Label x:Name="Lbl_Terceiro"
+               Content="Terceiro"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,70,0,0"
+               Width="100">
+        </Label>
+        <TextBox x:Name="Txt_CodTerc"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Background="AntiqueWhite"
+                 IsReadOnly="True"
+                 Margin="110,75,0,0"
+                 HorizontalContentAlignment="Center"
+                 Text=""
+                 Height="20"
+                 Width="30">
+        </TextBox>
+        <TextBox x:Name="Txt_DescrTerc"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Background="AntiqueWhite"
+                 IsReadOnly="True"
+                 Margin="150,75,0,0"
+                 HorizontalContentAlignment="Left"
+                 Text=""
+                 Height="20"
+                 Width="210">
+        </TextBox>
+
+        <Label x:Name="Lbl_TipoReceita"
+               Content="Tipo de receita"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,100,0,0"
+               Width="100">
+        </Label>
+        <TextBox x:Name="Txt_CodTipoReceita"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Background="AntiqueWhite"
+                 IsReadOnly="True"
+                 Margin="110,105,0,0"
+                 HorizontalContentAlignment="Center"
+                 Text=""
+                 Height="20"
+                 Width="30">
+        </TextBox>
+        <TextBox x:Name="Txt_DescrTipoReceita"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Background="AntiqueWhite"
+                 IsReadOnly="True"
+                 Margin="150,105,0,0"
+                 HorizontalContentAlignment="Left"
+                 Text=""
+                 Height="20"
+                 Width="210">
+        </TextBox>
+
+        <Label x:Name="Lbl_NDoc"
+               Content="Nº documento"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,130,0,0"
+               Width="100">
+        </Label>
+        <TextBox x:Name="Txt_NDoc"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Background="AntiqueWhite"
+                 IsReadOnly="True"
+                 Margin="110,135,0,0"
+                 HorizontalContentAlignment="Right"
+                 Text=""
+                 Height="20"
+                 Width="130">
+        </TextBox>
+
+        <Label x:Name="Lbl_Data"
+               Content="Data"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,160,0,0"
+               Width="100">
+        </Label>
+        <TextBox x:Name="Txt_Data"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Background="AntiqueWhite"
+                 IsReadOnly="True"
+                 Margin="110,165,0,0"
+                 TextWrapping="Wrap"
+                 Text=""
+                 Height="20"
+                 Width="80">
+        </TextBox>
+
+        <Label x:Name="Lbl_ContaDebito"
+               Content="Conta a débito"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               IsEnabled="False"
+               Margin="10,190,0,0"
+               Width="100">
+        </Label>
+        <TextBox x:Name="Txt_CodContaDebito"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Background="AntiqueWhite"
+                 IsReadOnly="True"
+                 Margin="110,195,0,0"
+                 HorizontalContentAlignment="Center"
+                 Text=""
+                 Height="20"
+                 Width="30">
+        </TextBox>
+        <TextBox x:Name="Txt_DescrContaDebito"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Background="AntiqueWhite"
+                 IsReadOnly="True"
+                 Margin="150,195,0,0"
+                 HorizontalContentAlignment="Left"
+                 Text=""
+                 Height="20"
+                 Width="210">
+        </TextBox>
+
+        <Label x:Name="Lbl_ContaCredito"
+               Content="Conta a crédito"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,220,0,0"
+               Width="100">
+        </Label>
+        <TextBox x:Name="Txt_CodContaCredito"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Background="AntiqueWhite"
+                 IsReadOnly="True"
+                 Margin="110,225,0,0"
+                 HorizontalContentAlignment="Center"
+                 Text=""
+                 Height="20"
+                 Width="30">
+        </TextBox>
+        <TextBox x:Name="Txt_DescrContaCredito"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Background="AntiqueWhite"
+                 IsReadOnly="True"
+                 Margin="150,225,0,0"
+                 HorizontalContentAlignment="Left"
+                 Text=""
+                 Height="20"
+                 Width="210">
+        </TextBox>
+
+        <Label x:Name="Lbl_Valor"
+               Content="Valor"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,250,0,0"
+               Width="100">
+        </Label>
+        <TextBox x:Name="Txt_Valor"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Background="AntiqueWhite"
+                 IsReadOnly="True"
+                 Margin="110,255,0,0"
+                 HorizontalContentAlignment="Right"
+                 TextWrapping="Wrap"
+                 Text=""
+                 Height="20"
+                 Width="100">
+        </TextBox>
+
+        <Label Name="Lbl_Status"
+               Content="Estado"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,280,0,0"
+               Width="90">
+        </Label>
+        <TextBox Name="Txt_Status"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Background="AntiqueWhite"
+                 IsReadOnly="True"
+                 Margin="110,285,0,0"
+                 HorizontalContentAlignment="Center"
+                 Text=""
+                 Height="20"
+                 Width="130">
+        </TextBox>
+
+        <Button Name="Btn_Delete"
+                Content="Eliminar"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontWeight="Bold"
+                Background="Red"
+                Margin="110,315,0,0"
+                Width="60"
+                Height="20"
+                Click="Btn_Delete_Click">
+        </Button>
+        <Button Name="Btn_Close"
+                Content="Fechar"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontWeight="Bold"
+                Margin="180,315,0,0"
+                Width="60"
+                Height="20"
+                Click="Btn_Close_Click">
+        </Button>
+    </Grid>
+</Window>
